@@ -6,10 +6,16 @@ body {
 .container {
   margin-top: 15rem;
 }
-.header {
-  font-size: 2rem;
+.header h1 {
+  font-size: 1.9rem;
+  padding: 0 1.2rem;
 }
 .buttons {
   display: flex;
   justify-content: space-between;
+}
+.buttons button {
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
