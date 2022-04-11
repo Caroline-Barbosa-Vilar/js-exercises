@@ -1,5 +1,4 @@
-const turnOn = document.getElementById ('turnOn');
-const turnOff = document.getElementById ('turnOff');
+const turnOnOff = document.getElementById ('turnOnOff');
 const lamp = document.getElementById ('lamp');
 
 function isLampBroken () {
@@ -10,7 +9,6 @@ function lampOn () {
   if (!isLampBroken () ) {
     lamp.src = './src/img/ligada.jpg';
   }
-  
 }
 
 function lampOff () {
@@ -23,8 +21,15 @@ function lampBroken () {
   lamp.src= './src/img/quebrada.jpg';
 }
 
-turnOn.addEventListener ('click', lampOn);
-turnOff.addEventListener ('click', lampOff);
-// lamp.addEventListener ('mouseover', lampOn);
-// lamp.addEventListener ('mouseleave', lampOff);
+function lampOnOff () {
+  if (turnOnOff.textContent == 'Turn on') {
+    lampOn();
+    turnOnOff.textContent = 'Turn off';
+  } else {
+    lampOff();
+    turnOff.textContent = 'Turn on';
+  }
+}
+
+turnOnOff.addEventListener ('click', lampOnOff);
 lamp.addEventListener ('dblclick', lampBroken);
