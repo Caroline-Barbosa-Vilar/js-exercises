@@ -4,12 +4,19 @@ body {
   width: 100vw;
   height: 100vh;
 }
+main {
+  display: flex;
+  flex-direction: column;
+}
 .title {
   font: calc(5vw + 20px) 'Open Sans', sans-serif;
   color: #ffcc00;
+  margin: 10vh auto;
+  text-transform: uppercase;
 }
 .container {
   background-color: #fff;
   width: 90vw;
   height: 100px;
+  margin: 0 auto;
 }
