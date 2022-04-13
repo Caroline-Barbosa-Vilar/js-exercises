@@ -4,3 +4,7 @@ body {
   width: 100vw;
   height: 100vh;
 }
+.title {
+  font: calc(5vw + 20px) 'Open Sans', sans-serif;
+  color: #ffcc00;
+}
