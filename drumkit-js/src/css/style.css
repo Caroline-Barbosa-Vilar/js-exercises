@@ -8,3 +8,8 @@ body {
   font: calc(5vw + 20px) 'Open Sans', sans-serif;
   color: #ffcc00;
 }
+.container {
+  background-color: #fff;
+  width: 90vw;
+  height: 100px;
+}
