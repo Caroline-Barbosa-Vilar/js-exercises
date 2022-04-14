@@ -24,5 +24,15 @@ const display = (sounds) => {
   Object.keys(sounds).forEach(createDiv);
 }
 
-display(sounds);
+const playSound = (letter) => {
+  const audio = new Audio (`./src/sounds/${sounds[letter]}`);
+  audio.play();
+}
 
+const activateDiv = (event) => {
+  const letter = event.target.id;
+  playSound(letter);
+}
+
+display(sounds);
+document.getElementById('container').addEventListener('click', activateDiv);
