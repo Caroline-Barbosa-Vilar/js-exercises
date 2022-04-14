@@ -20,4 +20,9 @@ const createDiv = (text) => {
   document.getElementById('container').appendChild(div);
 }
 
+const display = (sounds) => {
+  Object.keys(sounds).forEach(createDiv);
+}
+
+display(sounds);
 
