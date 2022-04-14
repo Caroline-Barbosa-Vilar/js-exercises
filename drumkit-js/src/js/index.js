@@ -31,6 +31,10 @@ const playSound = (letter) => {
 
 const activateDiv = (event) => {
   const letter = event.target.id;
+  const permittedLetter = sounds.hasOwnProperty(letter);
+  if (permittedLetter) {
+      playSound(letter);
+  } 
   playSound(letter);
 }
 
