@@ -20,23 +20,35 @@ const createDiv = (text) => {
   document.getElementById('container').appendChild(div);
 }
 
-const display = (sounds) => {
-  Object.keys(sounds).forEach(createDiv);
-}
+const display = (sounds) => Object.keys(sounds).forEach(createDiv);
 
 const playSound = (letter) => {
-  const audio = new Audio (`./src/sounds/${sounds[letter]}`);
+  const audio = new Audio (`./src/sound/${sounds[letter]}`);
   audio.play();
 }
 
+const addEffect = (letter) => document.getElementById(letter).classList.toggle('active');
+
+const removeEffect = (letter) => {
+  const div = document.getElementById(letter);
+  const removeActive = () => div.classList.remove('active');
+  div.addEventListener('transitionend', removeActive);
+}
+
 const activateDiv = (event) => {
-  const letter = event.target.id;
-  const permittedLetter = sounds.hasOwnProperty(letter);
-  if (permittedLetter) {
-      playSound(letter);
+
+  const letter = event.type == 'click' ? event.target.id: event.key.toUpperCase();
+
+    const permittedLetter = sounds.hasOwnProperty(letter);
+
+      if (permittedLetter) {
+        addEffect(letter);
+        playSound(letter);
+        removeEffect(letter);
   } 
-  playSound(letter);
 }
 
 display(sounds);
 document.getElementById('container').addEventListener('click', activateDiv);
+
+window.addEventListener('keyup', activateDiv);
