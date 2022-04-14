@@ -20,3 +20,13 @@ body {
 .title p {
   font-size: calc(10px + 1vw);
 }
+.countdown {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.countdown h1 {
+  font-size: calc(10px + 8vw);
+  text-shadow: 0 0 10px  whitesmoke;
+}
