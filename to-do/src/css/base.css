@@ -3,5 +3,6 @@
   --yellow: #F4CE01;
   --black: #0F0F0B;
 
+  --shadow: 1px 1px 5px var(--black);
   --open-sans: 'Open Sans', sans-serif;
 }
