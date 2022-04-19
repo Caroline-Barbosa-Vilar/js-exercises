@@ -8,7 +8,7 @@
 }
 .to__do--title {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   margin-top: 5rem;
   display: flex;
   justify-content: center;
@@ -24,27 +24,42 @@
   width: 100%;
   gap: 10px;
 }
-.to__do-item {
+.to__do--item {
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
   box-shadow: var(--shadow);
 }
-.to__do-item > div {
+.to__do--item > div {
   width: 80%;
 }
-.to__do-item:hover {
+.to__do--item:hover {
   background-color: var(--black);
   color: var(--yellow);
   cursor: pointer;
   transition: all .5s ease;
 }
+.to__do--item > input[type='text'] {
+  width: 80%;
+  font: inherit;
+  border: none;
+}
+.to__do--item > input[type='button'],
+.to__do--item > input [type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  font: inherit;
+}
+
+.to__do--item > input [type='checkbox']:checked + div {
+  text-decoration: line-through;
+}
 .to__do--new-item {
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
   display: flex;
   justify-content: space-evenly;
   background-color: var(--light-yellow);
@@ -52,4 +67,16 @@
   padding: 1rem 0;
   font: inherit;
   box-shadow: var(--shadow);
+}
+.to__do--new-item > input {
+  width: 80%;
+  background-color: var(--light-yellow);
+  font: inherit;
+  border: none;
+  outline: none;
+}
+.to__do--new-item > input::placeholder {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.8rem;
 }
