@@ -1,0 +1,8 @@
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--yellow);
+  font: bold 2rem var(--open-sans);
+}
