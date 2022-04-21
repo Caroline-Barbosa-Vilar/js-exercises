@@ -43,7 +43,7 @@ const addItem = (event) => {
 
 const removeItem = (index) => {
   const storage = getStorage();
-  storage.splice (index,1);
+  storage.splice (index, 1);
   setStorage(storage);
   updateScreen();
 }
@@ -51,6 +51,7 @@ const removeItem = (index) => {
 const updateItem = (index) => {
   const storage = getStorage();
   storage[index].status = storage[index].status === '' ? 'checked' : '';
+  setStorage(storage);
   updateScreen();
 }
 
@@ -66,7 +67,7 @@ const clickItem = (event) => {
   }
 }
 
-document.getElementById('newItem').addEventListener('keypress',addItem);
+document.getElementById('newItem').addEventListener('keypress', addItem);
 document.getElementById('toDolist').addEventListener('click', clickItem);
 
 updateScreen();
