@@ -42,25 +42,31 @@ const addItem = (event) => {
 }
 
 const removeItem = (index) => {
+  const storage = getStorage();
   storage.splice (index,1);
+  setStorage(storage);
   updateScreen();
 }
 
-const updateItem = (event) => {
+const updateItem = (index) => {
+  const storage = getStorage();
   storage[index].status = storage[index].status === '' ? 'checked' : '';
   updateScreen();
 }
+
 const clickItem = (event) => {
   const element = event.target;
+  console.log (element.type);
   if (element.type === 'button') {
-    const index = element.dataset.indice;
+    const index = element.dataset.index;
     removeItem(index);
-  } else if (element.type === 'checkbox'){
-    const index = element.dataset.indice;
+  } else if (element.type === 'checkbox') {
+    const index = element.dataset.index;
     updateItem(index);
   }
 }
 
 document.getElementById('newItem').addEventListener('keypress',addItem);
 document.getElementById('toDolist').addEventListener('click', clickItem);
+
 updateScreen();
