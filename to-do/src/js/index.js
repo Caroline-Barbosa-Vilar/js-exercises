@@ -9,28 +9,33 @@ const createItem = (task, status, index) => {
   const item = document.createElement('label');
   item.classList.add('to__do--item');
   item.innerHTML = `
-  <input type="checkbox" ${status} data-index=${index}>
-  <div>${task}</div>
-  <input type="button" value="X" data-index=${index}>
-  `
+    <input type="checkbox" ${status} data-index=${index}>
+    <div>${task}</div>
+    <input type="button" value="X" data-index=${index}>
+  `;
   document.getElementById('toDolist').appendChild(item);
 }
 
 const eraseTask = () => {
   const toDolist = document.getElementById('toDolist');
   while (toDolist.firstChild) {
-    toDolist.removeChild(toDolist.lastChild)
+    toDolist.removeChild(toDolist.lastChild);
   }
 }
+
 const updateScreen = () => {
-  eraseTask()
+  eraseTask();
+  const storage = getStorage();
   storage.forEach((item,index)  => createItem(item.task, item.status, index));
 }
+
 const addItem = (event) => {
   const key = event.key;
-  const text = event.target.value
+  const text = event.target.value;
   if (key === 'Enter') {
-    storage.push ({'task': text,'status': ''})
+    const storage = getStorage();
+    storage.push ({'task': text,'status': ''});
+    setStorage(storage);
     updateScreen();
     event.target.value = '';
   }
