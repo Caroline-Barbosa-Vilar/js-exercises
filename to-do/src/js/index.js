@@ -1,9 +1,9 @@
 'use strict';
 
-let storage = [
-  {'task': 'Study JS', 'status': ''}
-  {'task': 'Netflix', 'status': 'checked'}
-]
+let storage = [];
+
+const getStorage = () => JSON.parse(localStorage.getItem ('toDolist')) ?? [];
+const setStorage = (storage) => localStorage.setItem('toDolist', JSON.stringify(storage));
 
 const createItem = (task, status, index) => {
   const item = document.createElement('label');
